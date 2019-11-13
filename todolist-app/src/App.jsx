@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './views/Home.jsx'
+import Todolist from './views/Todolist'
 
 const App = ()=>{
     return(
     <Router>
       <Switch> 
-      <Route exact path="/" component= {Home}/>
+      <Route exact path="/" component= {Todolist}/>
           </Switch>
      
 </Router>
