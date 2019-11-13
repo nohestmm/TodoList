@@ -1,0 +1,12 @@
+.content-main{
+    display: flex;
+    justify-content: center;
+    padding-top: 9%;
+}
+
+.content-list{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+
+}
