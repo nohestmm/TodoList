@@ -9,9 +9,12 @@ const Todolist = () => {
         <section className="content-main">
             <div className="content-titles">
                 <span>Cosas por Hacer</span>
-                <span>Hoy 
-                    { ` ${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`} 
-                    
+                <span>Hoy
+                    {` 
+                    ${today.getDate()}/
+                    ${today.getMonth()}/
+                    ${today.getFullYear()}`}
+
                 </span>
             </div>
             <div className="content-options">
@@ -19,7 +22,7 @@ const Todolist = () => {
                 <div>
                     <FontAwesomeIcon icon={faFilter} />
                     <span>Ordenar</span>
-                    </div>
+                </div>
 
                 {/* <select name="select" id="select">
                     <option value="lesstomore">Segun creación</option>
@@ -27,10 +30,10 @@ const Todolist = () => {
                     <option selected value="estado">Segun estado</option>
                 </select> */}
             </div>
-           <GridList/>
-            </section>
-            
-        
+            <GridList />
+        </section>
+
+
 
     )
 }

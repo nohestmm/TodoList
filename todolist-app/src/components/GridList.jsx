@@ -1,46 +1,43 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './GridList.css';
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import IconStatus from './IconStatus'
+import loading from '../images/loading.gif'
 
-class GridList extends React.Component{
-constructor(props){
-super(props)
+const GridList = () => {
 
-this.state = {
-todolist: []
-}
-}
-componentDidMount() {
-axios.get('http://my-json-server.typicode.com/nohestmm/json-db/todolist')
-.then(response =>
-    this.setState({
-        todolist: response.data
-    }))
-}
-render(){
-    const { todolist } =  this.state
-    return(
+    const [data, setData] = useState([])
+
+    useEffect( () => {
+       axios.get('http://my-json-server.typicode.com/nohestmm/json-db/todolist')
+            .then(response => setData(response.data))
+    },[])
+
+
+    return ( 
+        
         <div>
             {
-                todolist.map((el, index) =>
-                  
-                    <div key={index}>  
-                        <input type="checkbox" name={el.id} id={el.id}/>
-                       <span>${el.description}</span> 
-                       <input type="text" name="" id="" placeholder= {el.date}/>
-                       <FontAwesomeIcon icon={faCalendarAlt} />
-                       <IconStatus status={el.state}  />
+            data.length===0
+            ? <p><img src={loading} alt="loading"/></p>
+            :
+                data.map((el, index) =>
+                    <div key={index}>
+                        <input type="checkbox" name={el.id} id={el.id} />
+                        <span>${el.description}</span>
+                        <input type="text" name="" id="" placeholder={el.date} />
+                        <FontAwesomeIcon icon={faCalendarAlt} />
+                        <IconStatus status={el.state} />
                     </div>
-                    
+
                 )
             }
         </div>
     )
 
 }
-}
+
 
 export default GridList
