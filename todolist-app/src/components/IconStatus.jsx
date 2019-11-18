@@ -13,7 +13,7 @@ const IconStatus = ({ status }) => {
             setIcon(<FontAwesomeIcon icon={faTimesCircle} />)
         if (status === "liberada")
             setIcon(<FontAwesomeIcon icon={faCheckCircle} />)
-    })
+    },[])
 
     return (
         <span>

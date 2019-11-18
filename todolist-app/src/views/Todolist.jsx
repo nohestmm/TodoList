@@ -23,13 +23,7 @@ const Todolist = () => {
                     <FontAwesomeIcon icon={faFilter} />
                     <span>Ordenar</span>
                 </div>
-
-                {/* <select name="select" id="select">
-                    <option value="lesstomore">Segun creación</option>
-                    <option value="vencimiento">Segun vencimiento</option>
-                    <option selected value="estado">Segun estado</option>
-                </select> */}
-            </div>
+                        </div>
             <GridList />
         </section>
 

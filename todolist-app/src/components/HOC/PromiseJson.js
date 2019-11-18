@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 const PromiseJson = (url) =>{
 return new Promise ((resolve, reject)=>{
 axios.get(url)
