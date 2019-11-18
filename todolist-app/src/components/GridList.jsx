@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './GridList.css';
-import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import IconStatus from './IconStatus'
 import loading from '../images/loading.gif'
+import PromiseJson from './HOC/PromiseJson';
 
 const GridList = () => {
 
     const [data, setData] = useState([])
 
     useEffect( () => {
-       axios.get('http://my-json-server.typicode.com/nohestmm/json-db/todolist')
-            .then(response => setData(response.data))
+       PromiseJson('http://my-json-server.typicode.com/nohestmm/json-db/todolist')
+            .then(response => setData(response))
     },[])
 
 
