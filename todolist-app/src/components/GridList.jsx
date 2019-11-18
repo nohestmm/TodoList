@@ -9,13 +9,20 @@ import PromiseJson from './HOC/PromiseJson';
 const GridList = () => {
 
     const [data, setData] = useState([])
+    const [error, setError] = useState('')
 
     useEffect( () => {
        PromiseJson('http://my-json-server.typicode.com/nohestmm/json-db/todolist')
             .then(response => setData(response))
+            .catch(error=>{
+                setError(error.message)
+            })
     },[])
 
-
+if(error){
+    return (<p>{error}</p>)
+}
+else{
     return ( 
         
         <div>
@@ -36,7 +43,7 @@ const GridList = () => {
             }
         </div>
     )
-
+        }
 }
 
 
