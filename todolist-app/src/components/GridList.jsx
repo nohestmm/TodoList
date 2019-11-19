@@ -1,28 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './GridList.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import IconStatus from './IconStatus'
 import loading from '../images/loading.gif'
-import PromiseJson from './HOC/PromiseJson';
+
+import useJson from './CustomHooks/useJson';
 
 const GridList = () => {
 
-    const [data, setData] = useState([])
-    const [error, setError] = useState('')
+    const data = useJson()
+   
 
-    useEffect(() => {
-        PromiseJson('http://my-json-server.typicode.com/nohestmm/json-db/todolist')
-            .then(response => {
-                setData(response)
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-    }, [])
-
-    if (error) {
-        return (<p>{error}</p>)
+    if (data === 'Request failed with status code 404') {
+        return (<p>{data}</p>)
     }
     else {
         return (
