@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react';
 import PromiseJson from '../HOC/PromiseJson'
 const useJson = () => {
-   
-    const [data, setData] = useState('')
+    const [error, setError] = useState('')
+    const [data, setData] = useState([])
     useEffect(() => {
-        PromiseJson('http://my-json-server.typicode.com/nohestmm/json-db/todolist')
+        PromiseJson('http://my-json-server.typicode.com/nohestmm/json-db/todlist')
             .then(response => {
                 setData(response)
             })
             .catch(error => {
-                setData(error.message)
+                setError(error.message)
             })
     }, [])
   
-   return data
+   return {data, error}
   
 
 }

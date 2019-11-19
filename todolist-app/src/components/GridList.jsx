@@ -9,21 +9,21 @@ import useJson from './CustomHooks/useJson';
 
 const GridList = () => {
 
-    const data = useJson()
+    const list = useJson([])
    
 
-    if (data === 'Request failed with status code 404') {
-        return (<p>{data}</p>)
+    if ( list.error) {
+        return (<p>{list.error}</p>)
     }
     else {
         return (
 
             <div>
                 {
-                    data.length === 0
+                    list.data.length === 0
                         ? <p><img src={loading} alt="loading" /></p>
                         :
-                        data.map((el, index) =>
+                        list.data.map((el, index) =>
                             <div key={index}>
                                 <input type="checkbox" name={el.id} id={el.id} />
                                 <span>${el.description}</span>
