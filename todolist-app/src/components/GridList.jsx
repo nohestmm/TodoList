@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import IconStatus from './IconStatus'
 import loading from '../images/loading.gif'
-
-import useJson from './CustomHooks/useJson';
+import useJson from './CustomHooks/usePromise';
 
 const GridList = () => {
 
@@ -20,7 +19,7 @@ const GridList = () => {
 
             <div>
                 {
-                    list.data.length === 0
+                    list.loading
                         ? <p><img src={loading} alt="loading" /></p>
                         :
                         list.data.map((el, index) =>
