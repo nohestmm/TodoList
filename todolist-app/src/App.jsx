@@ -1,18 +1,9 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Todolist from './views/Todolist'
+import Routes from './components/Routes';
 
-const App = ()=>{
-    return(
-    <Router>
-      <Switch> 
-      <Route exact path="/" component= {Todolist}/>
-          </Switch>
-     
-</Router>
+const App = ()=>(
+ <Routes/>
 )
-}
-
 
 export default App;

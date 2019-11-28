@@ -1,8 +1,8 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 const IconStatus = ({ status }) => {
     let icon
@@ -19,4 +19,4 @@ const IconStatus = ({ status }) => {
     )
 }
 
-export default IconStatus
+export default IconStatus;
