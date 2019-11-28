@@ -6,6 +6,7 @@ import IconStatus from './IconStatus'
 import loading from '../images/loading.gif'
 import useJson from './CustomHooks/usePromise';
 
+
 const GridList = () => {
 
     const list = useJson([])
@@ -17,13 +18,13 @@ const GridList = () => {
     else {
         return (
 
-            <div>
+            <div className="content-todolist">
                 {
                     list.loading
                         ? <p><img src={loading} alt="loading" /></p>
                         :
                         list.data.map((el, index) =>
-                            <div key={index}>
+                            <div key={index} className= "content-list">
                                 <input type="checkbox" name={el.id} id={el.id} />
                                 <span>${el.description}</span>
                                 <input type="text" name="" id="" placeholder={el.date} />
@@ -31,9 +32,13 @@ const GridList = () => {
                                 <IconStatus status={el.state} />
                             </div>
 
-                        )
-                }
-            </div>
+                        ) 
+                        
+             }
+           
+            </div> 
+     
+           
         )
     }
 }

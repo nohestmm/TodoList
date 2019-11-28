@@ -3,6 +3,7 @@ import './Todolist.css';
 import GridList from '../components/GridList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilter } from '@fortawesome/free-solid-svg-icons'
+import ButtonAdd from '../components/ButtonAdd'
 const Todolist = () => {
     const today = new Date()
     return (
@@ -25,6 +26,7 @@ const Todolist = () => {
                 </div>
                         </div>
             <GridList />
+            <ButtonAdd/>  
         </section>
 
 
