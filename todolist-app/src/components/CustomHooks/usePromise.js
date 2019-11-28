@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PromiseJson from '../HOC/PromiseJson'
-const useJson = () => {
+const usePromise = () => {
     const [error, setError] = useState('')
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
@@ -22,4 +22,4 @@ const useJson = () => {
 
 }
 
-export default useJson
+export default usePromise

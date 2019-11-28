@@ -8,25 +8,26 @@ const Todolist = () => {
     const today = new Date()
     return (
         <section className="content-main">
+            <div  className="content-header">
             <div className="content-titles">
-                <span>Cosas por Hacer</span>
-                <span>Hoy
-                    {` 
-                    ${today.getDate()}/
-                    ${today.getMonth()}/
-                    ${today.getFullYear()}`}
-
-                </span>
-            </div>
-            <div className="content-options">
+                <p>Cosas por Hacer</p>
                 <button>Liberar Seleccionadas</button>
+            </div>
+            <div  className="content-titles">
+                <p>Hoy
+                    {` 
+                    ${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}
+                    `}
+
+                </p>
                 <div>
                     <FontAwesomeIcon icon={faFilter} />
                     <span>Ordenar</span>
                 </div>
-                        </div>
+            </div>
+</div>
             <GridList />
-            <ButtonAdd/>  
+            <ButtonAdd />
         </section>
 
 

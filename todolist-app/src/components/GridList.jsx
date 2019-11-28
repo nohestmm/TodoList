@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons'
 import IconStatus from './IconStatus'
 import loading from '../images/loading.gif'
-import useJson from './CustomHooks/usePromise';
+import usePromise from './CustomHooks/usePromise';
 
 
 const GridList = () => {
 
-    const list = useJson([])
+    const list = usePromise([])
    
 
     if ( list.error) {
